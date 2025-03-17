@@ -16,13 +16,14 @@ public class FacultyService {
         this.facultyRepository = facultyRepository;
     }
 
-    public Collection<Faculty> findStudentAll() {
+    public Collection<Faculty> findFacultyAll() {
         return facultyRepository.findAll();
     }
 
-    public Faculty addFaculty(Faculty student) {
-        return facultyRepository.save(student);
+    public Faculty addFaculty(Faculty faculty) {
+        return facultyRepository.save(faculty);
     }
+
 
     public Faculty findFaculty(long id) {
         return facultyRepository.findById(id).get();
@@ -31,8 +32,9 @@ public class FacultyService {
     public void deleteFaculty(long id) {
         facultyRepository.deleteById(id);
     }
+
     public List<Faculty> findByColor(String color) {
-        return facultyRepository.findByName(color);
+        return facultyRepository.findByColor(color);
     }
 
 }

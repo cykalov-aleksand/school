@@ -3,7 +3,7 @@ package ru.hogwarts.school.service;
 import org.springframework.stereotype.Service;
 import ru.hogwarts.school.model.Student;
 import ru.hogwarts.school.repository.StudentRepository;
-import java.util.ArrayList;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -33,13 +33,6 @@ public class StudentService {
     }
 
     public List<Student> findByAge(int age) {
-        List<Student>aa=studentRepository.findAll();
-        List<Student>bb=new ArrayList<>();
-        for (Student variable:aa){
-            if(variable.getAge()==age){
-                bb.add(variable);
-            }
-        }
-        return bb;
+        return studentRepository.findByAge(age);
     }
 }

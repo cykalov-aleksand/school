@@ -19,7 +19,7 @@ public class Avatar {
  private Student student;
 public Avatar(){
 
-};
+}
     public Avatar(long id, String filePath, String mediaType, long fileSize, byte[] data) {
         this.id = id;
         this.filePath = filePath;
@@ -33,12 +33,12 @@ public Avatar(){
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         Avatar avatar = (Avatar) object;
-        return id == avatar.id && fileSize == avatar.fileSize && Objects.equals(filePath, avatar.filePath) && Objects.equals(mediaType, avatar.mediaType) && Objects.deepEquals(data, avatar.data);
+        return id == avatar.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, filePath, mediaType, fileSize, Arrays.hashCode(data));
+        return Objects.hashCode(id);
     }
 
     public long getId() {
